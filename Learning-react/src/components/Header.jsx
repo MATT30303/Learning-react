@@ -2,7 +2,7 @@ function Header(){
 
     return(
         <header>
-        <hi className="tittle">Web Gaming</hi>
+        <h1 className="tittle">Web Gaming</h1>
         </header>
     );
 }

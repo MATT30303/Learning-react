@@ -1,0 +1,92 @@
+:root{
+    --color1: #352F44;
+    --color2: #2A2438;
+    --color3: #411E8F;
+    --color4: #310A5D;
+    --white: #FAF9F6;
+    --black: #030104;
+    --gray: #191924;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    text-align: center;
+    padding: 2rem 0 0 0;
+}
+.title{
+    font-family: "Lato", sans-serif;
+    font-size: 3rem;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.player{
+    font-family: "Lato", sans-serif;
+    font-size: 2rem;
+    padding: 4rem 0 0 0;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    background-color: transparent;
+    border: thin solid var(--color3);
+    border-radius: 1rem;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background-color ease-in-out .4s, color ease-in-out .3s, box-shadow ease-in-out .2s;
+}
+.button:hover{
+    background-color: var(--color3);
+    box-shadow: 0 0 2rem var(--color3);
+    color: black;
+    transition: background-color ease-in-out .2s, color ease-in-out .3s, box-shadow ease-in-out .4s;
+}
+.board{
+    padding: 1rem 0 0 0;
+    height: 600px;
+    width: 564px;
+    display: flex;
+    margin: auto;
+}
+.boxes{
+    height: 11.25rem;
+    width: 11.25rem;
+    display: flex;
+    background-color: var(--color2);
+    border: .250rem solid var(--gray);
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 .250rem 0 var(--gray);
+}
+
+.circle,.oWin{
+    filter: hue-rotate(90deg);
+}
+.cross,.xWin{
+    filter: hue-rotate(125deg);
+}
+.board img{
+    margin: 3.5rem 3.5rem;
+}
+.crossWin,.circleWin{
+    padding: 1rem;
+    margin: 1rem;
+}
+.xWin,.oWin{
+    width: 2rem;
+    padding: 0rem 1rem;
+}
+#home{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
