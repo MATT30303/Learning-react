@@ -6,6 +6,7 @@
     --white: #FAF9F6;
     --black: #030104;
     --gray: #191924;
+    --lightblue: #86c5da;
 }
 
 *{
@@ -89,4 +90,7 @@
     position: absolute;
     left: 1rem;
     top: 1rem;
+}
+a{
+    text-decoration: none;
 }

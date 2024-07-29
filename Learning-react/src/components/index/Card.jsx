@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import tictactoeUrl from '../../assets/tictactoe.png'
+import defaultUrl from '../../assets/default.png'
+import snakeUrl from '../../assets/snake.jpg'
 
 function Card(props){
-    const tictactoeUrl= './src/assets/tictactoe.png';
-    const defaultUrl= './src/assets/default.png';
-    const snakeUrl= './src/assets/snake.jpg';
 
 
         if (props.pic === "tictactoe") {
@@ -29,7 +29,9 @@ function Card(props){
         else if(props.pic === "snake"){
             return(
                 <div className="card">
+                <Link to="/Snake">
                 <img className='card-img' src={snakeUrl}/>
+                </Link>
                 <h2 className='card-tittle'>{props.name}</h2>
                 <span className='card-desc'>{props.desc}</span>
                 </div>

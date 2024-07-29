@@ -1,7 +1,8 @@
 
-import Header from '../components/Header';
-import Footer from '../components/footer';
-import Card from '../components/Card';
+import Header from '../components/index/Header';
+import Footer from '../components/footer/footer';
+import Card from '../components/index/Card';
+import '../components/index/index.css';
 
 function index() {
 return(

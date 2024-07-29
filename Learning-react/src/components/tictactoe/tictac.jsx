@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom';
-import circle_icon from "../../assets/circle.png"
-import cross_icon from "../../assets/cross.png"
-import './tictac.css'
+import React, { useRef, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import circle_icon from "../../assets/circle.png";
+import cross_icon from "../../assets/cross.png";
+import './tictac.css';
 
-let data = ["","","","","","","","",""]
+let data = ["","","","","","","","","","D"]
 
 
 
@@ -29,18 +29,19 @@ export const tictac = () => {
         if(lock){
             return 0;
         }
-        if(count%2 === 0){
+        if(count%2 === 0 && data[num] === ""){
             e.target.innerHTML= `<img class="cross" src='${cross_icon}'>`;
             data[num]="x";
             setCount(++count);
             playerRef.current.innerHTML = `O's turn`;
         }
-        else{
+        else if (count%2 !== 0 && data[num] === ""){
             e.target.innerHTML= `<img class="circle" src='${circle_icon}'>`;
             data[num]="o";
             setCount(++count);
             playerRef.current.innerHTML = `X's turn`;
         }
+        console.log(count);
         checkWin();
     }
 
@@ -55,10 +56,11 @@ export const tictac = () => {
 
         else if(data[0] === data[4] && data[4] === data[8] && data[8] !== ""){won(data[8]);}
         else if(data[2] === data[4] && data[4] === data[6] && data[6] !== ""){won(data[6]);}
-        console.log(count);
-        if(count===9){
-            playerRef.current.innerHTML = `It's a draw!`;
+        
+        else if(!data.includes("") && count==9){
+            won(data[9]);
         }
+        console.log(count);
     }
 
     const won = (winner) =>{
@@ -66,27 +68,28 @@ export const tictac = () => {
         if(winner === "x"){
             playerRef.current.innerHTML = `Congratulations: <img class="xWin" src=${cross_icon}> wins the game!!`;
         }
-        else{
+        else if(winner === "o"){
             playerRef.current.innerHTML = `Congratulations: <img class="xWin" src=${circle_icon}> wins the game!!`;
+        }
+        else if(winner === "D"){
+            playerRef.current.innerHTML = `It's a draw!`;
         }
     }
     const reset = ()=>{
         setLock(false);
-        data = ["","","","","","","","",""];
+        data = ["","","","","","","","","","D"];
         playerRef.current.innerHTML = `X's turn`;
         box_array.map((e)=>{
             e.current.innerHTML = "";
         })
+        setCount(0);
     }
 
   return (
     <div className='container'>
         <h1 className='title' ref={titleRef}>Tic Tac Toe</h1>
         <span className='player' ref={playerRef}>X's turn</span>
-        <Link to="/index">
-        <span className='button' id='home'>Home</span>
-        </Link>
-
+        
         <div className="board">
             <div className="row1">
                 <div className="boxes" ref={box0} onClick={(e)=>{toggle(e,0)}} ></div>

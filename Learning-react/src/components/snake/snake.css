@@ -1,0 +1,58 @@
+:root{
+    --color1: #352F44;
+    --color2: #2A2438;
+    --color3: #411E8F;
+    --color4: #310A5D;
+    --white: #FAF9F6;
+    --black: #030104;
+    --gray: #191924;
+    --lightblue: #86c5da;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.snake-tittle{
+    font-size: 2rem;
+    padding: .125rem .5rem;
+    border-bottom: .250rem solid var(--white);
+    border-radius: .5rem;
+    cursor: default;
+}
+.gameState-container{
+   text-align: center; 
+}
+.text-container{
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+    padding: 5rem 0 0 0;
+}
+.score,.highScore{
+    font-size: 1.5rem;
+    cursor: default;
+    padding: .5rem .5rem;
+    border-bottom: .250rem solid var(--white);
+    border-radius: .5rem;
+}
+.canvas{
+    background-color: var(--color1);
+    border: thin solid var(--black);
+    border-radius: .5rem;
+    margin: 5rem 0 0 0;
+    box-shadow: 0 0 1rem 0 var(--black);
+}
+.gameOver-container{
+    font-size: 1.5rem;
+    padding: 5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.enter-text{
+    color: var(--lightblue);
+}
+.highScore{
+    color: var(--lightblue);
+    border-bottom: .250rem solid var(--lightblue);
+}
